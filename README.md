@@ -1,10 +1,10 @@
-# Title
+## Title
 
-Store details and Ratings Managment
+    Store details and Ratings Managment
 
 ## Objective
 
-The goal is to build a web application for submitting and managing store ratings, with role-based access for different users.
+    The goal is to build a web application for submitting and managing store ratings, with role-based access for different users.
 
 ## Tech Stack
 
@@ -429,5 +429,6 @@ Build a single-page application (SPA) with role-based routing. Use React Router 
    password : sharath@2025
 
 3. email:bhanuprakashdevari@gmail.com
-   password : bhanu@2025#   S t o r e s - R a t i n g s - M a n a g e m e n t  
+   password : bhanu@2025#   S t o r e s - R a t i n g s - M a n a g e m e n t 
+ 
  
