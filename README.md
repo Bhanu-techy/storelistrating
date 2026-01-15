@@ -1,10 +1,10 @@
 ## Title
 
-    Store details and Ratings Managment
+Store details and Ratings Managment
 
 ## Objective
 
-    The goal is to build a web application for submitting and managing store ratings, with role-based access for different users.
+The goal is to build a web application for submitting and managing store ratings, with role-based access for different users.
 
 ## Tech Stack
 
@@ -56,6 +56,7 @@ Design a normalized schema to avoid redundancy and ensure data integrity. Use SQ
 
 Example SQL for table creation (in backend init script):
 
+```
 CREATE TABLE Users (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT NOT NULL,
@@ -64,6 +65,8 @@ CREATE TABLE Users (
     address TEXT,
     role TEXT NOT NULL
 );
+
+```
 -- Similar for Stores and Ratings
 
 ### Functionality
