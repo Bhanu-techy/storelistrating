@@ -1,0 +1,65 @@
+.login-container{
+    background-color: aqua;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+
+}
+.login-head{
+    font-family:'Courier New';
+    font-size: 42px;
+    height: 100px;
+}
+.login-btn-div{
+    width: 700px;
+    display: flex;
+    justify-content: space-around;
+}
+.login-btn{
+    height: 40px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    font-size: 15px;
+}
+.input-container{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+.form{
+    width: 350px;
+    height: 300px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    border-radius: 10px;
+    border: 2px solid #bfbfbf;
+    margin-top: 40px;
+}
+input{
+    height: 26px;
+    width: 220px;
+}
+.submit-button{
+    border: none;
+    background-color: rgb(70, 70, 227);
+    color: #ffffff;
+    height: 27px;
+    width: 80px;
+    border-radius: 5px;
+    margin: 10px;
+}
+.role{
+    font-size: 18px;
+    font-family: 'Gill Sans';
+}
+.err-msg{
+    color: red;
+}

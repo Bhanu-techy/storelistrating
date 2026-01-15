@@ -1,0 +1,45 @@
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color:rgb(134, 203, 228);
+}
+.logo{
+    width: 70px;
+    height: 30px;
+}
+.logout-btn{
+    margin-right: 50px;
+    width: 100px;
+    height: 27px;
+    border-radius: 5px;
+    background-color: rgb(70, 70, 218);
+    color: #ffffff;
+    border: none;
+}
+.chng-pass-btn{
+    width: 130px;
+    height: 27px;
+    border-radius: 5px;
+    background-color: rgb(135, 232, 205);
+    color: #000000;
+    
+    border: 1px solid ;
+}
+.modal-card{
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.password-form{
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.error-msg{
+    color: red;
+}

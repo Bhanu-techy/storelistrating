@@ -1,0 +1,21 @@
+.rating-input{
+    width: 100px;
+    height: 22px;
+}
+.submit-rating{
+    width: 100px;
+    height: 28px;
+    margin: 10px;
+    background-color: lightyellow;
+    border: 2px solid yellow;
+    border-radius: 5px;
+}
+.user-page{
+    background-color: rgb(178, 227, 239);
+    min-height: 100vh;
+    padding: 20px;
+}
+.store-list-user{
+    display: flex;
+    
+}
