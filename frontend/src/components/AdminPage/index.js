@@ -168,48 +168,60 @@ const AdminPage = () => {
                 <hr/>
                 <p className="count">Total Ratings Count : <span className="countnum">{details.rating}</span></p>
             </div>
-            <div className="stores-list">
-                <div className="header">
-                    <h1>Stores</h1>
-                    <button onClick={onClickAddStore}>Add Store</button>
-                </div>
-                <div className="list-horiz">
-                <ol>
-                {stores.map(each => (
-                    <li key={each.email} className="list">
-                        <p className="title">Store Name : <span>{each.storeName}</span></p>
-                        <p className="title">Address : <span>{each.address}</span></p>
-                        <p className="title">Email : <span>{each.email}</span></p>
-                        <p className="title">Rating : <span>{each.rating}</span></p>
-                    </li>
-                ))}
-                </ol>
-                {addStore && <form className="addform">
+                <div className="table-div">
+                <h1>Stores</h1>
+                <table border="1" style={{ borderCollapse: "collapse", width: "90%" }}>
+                <thead>
+                    <tr>
+                    <th>Store</th>
+                    <th>Address</th>
+                    <th>Rating</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {stores.map(row => (
+                    <tr key={row.id}>
+                        <td>{row.storeName}</td>
+                        <td>{row.address}</td>
+                        <td>{row.rating}</td>
+                    </tr>
+                    ))}
+                </tbody>
+                </table>
+                <button className="add-btn" onClick={onClickAddStore}>Add Store</button>
+                {addStore && 
+                <form className="addform">
                     <p className="title">Add Store Details</p>
                         <input type="text" name="name" onChange={handleStoreChange} value={storeDetails.name} placeholder="Enter Name"/>
                         <input type="text" name="email" onChange={handleStoreChange} value={storeDetails.email} placeholder="Email"/>
                         <input type="text" name="address" onChange={handleStoreChange} value={storeDetails.address} placeholder="Enter Address"/>
                         <input type="text" name="owner_id" onChange={handleStoreChange} value={storeDetails.owner_id} placeholder="Enter Owner Id"/>
                         <button className="submit-button" onClick={onAddStoreDetails}>Submit</button>
-                        </form>}
+                </form>}
                 </div>
-            </div>
-            <div className="stores-list">
-                <div className="header">
+                <div className="table-div">
                     <h1>Users</h1>
-                    <button onClick={onClickAddUser}>Add User</button>
-                </div>
-                <div className="list-horiz">
-                <ol>
-                    {users.map(each => (
-                        <li key={each.email} className="list">
-                            <p className="title">Name : <span>{each.name}</span></p>
-                            <p className="title">Email : <span>{each.email}</span></p>
-                            <p className="title">Address : <span>{each.address}</span></p>
-                            <p className="title">Role : <span>{each.role}</span></p>
-                        </li>
+                <table border="1" style={{ borderCollapse: "collapse", width: "90%" }}>
+                <thead>
+                    <tr>
+                    <th>Store</th>
+                    <th>Address</th>
+                    <th>Rating</th>
+                    <th>Role</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {users.map(row => (
+                    <tr key={row.id}>
+                        <td>{row.name}</td>
+                        <td>{row.address}</td>
+                        <td>{row.email}</td>
+                        <td>{row.role}</td>
+                    </tr>
                     ))}
-                </ol>
+                </tbody>
+                </table>
+                <button className="add-btn" onClick={onClickAddUser}>Add User</button>
                 {addUser && (
                     <form className="addform">
                         <p className="title">Add User Details</p>
@@ -221,7 +233,7 @@ const AdminPage = () => {
                         <button className="submit-button" onClick={onAddUserDetails}>Submit</button>
                     </form>
                 )}
-                </div>
+                
             </div>
         </div>
     </>

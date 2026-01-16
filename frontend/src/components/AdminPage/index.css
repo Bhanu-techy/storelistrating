@@ -18,10 +18,9 @@
     font-weight: bold;
 }
 .count{
-    
     display: flex;
     justify-content: space-around;
-    font-size: 22px;
+    font-size: 20px;
 }
 .stores-list{
     align-self: flex-start;
@@ -62,11 +61,37 @@ span{
     height: 230px;
     border-radius: 10px;
 }
-.list-horiz{
+.table-div{
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    width: 100%;
 }
-
+th{
+    height: 40px;
+}
+td{
+    height: 40px;
+    text-align: center;
+}
 ol{
     display: flex;
     flex-wrap: wrap;
+}
+h1{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+table{
+    width: 100%;
+}
+.add-btn{
+    margin: 15px;
+    background-color: rgb(62, 62, 219);
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    height: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
