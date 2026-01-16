@@ -30,7 +30,7 @@ const AdminPage = () => {
     }
 
     const onAddUserDetails = async() => {
-        const url = 'https://storeslistbackend.onrender.com/api/admin/users'
+        const url = 'https://storelistrating.onrender.com/api/admin/users'
         const options = {
             method : 'POST',
             headers : {
@@ -46,7 +46,7 @@ const AdminPage = () => {
     }
 
     const onAddStoreDetails = async() => {
-        const url = 'https://storeslistbackend.onrender.com/api/admin/stores'
+        const url = 'https://storelistrating.onrender.com/api/admin/stores'
         const options = {
             method : 'POST',
             headers : {
@@ -65,7 +65,7 @@ const AdminPage = () => {
     useEffect(()=> {
         const getDashboard = async () =>{
              const jwtToken = Cookies.get('jwt_token')
-            const url = 'https://storeslistbackend.onrender.com/api/admin/dashboard'
+            const url = 'https://storelistrating.onrender.com/api/admin/dashboard'
 
             const options = {
                 method: 'GET',
@@ -82,7 +82,7 @@ const AdminPage = () => {
     useEffect(()=> {
         const getStores = async () =>{
              const jwtToken = Cookies.get('jwt_token')
-            const url = 'https://storeslistbackend.onrender.com/api/admin/stores'
+            const url = 'https://storelistrating.onrender.com/api/admin/stores'
 
             const options = {
                 method: 'GET',
@@ -91,10 +91,9 @@ const AdminPage = () => {
                 }}
 
             const response = await fetch(url, options)
-            
-                const data = await response.json()
-                setStores(data)
-           
+            const data = await response.json()
+            setStores(data)
+           console.log(data)
         }
         getStores()
     },[])
@@ -103,7 +102,7 @@ const AdminPage = () => {
     useEffect(()=>{
         const getUsers = async () =>{
             const jwtToken = Cookies.get('jwt_token')
-            const url = 'https://storeslistbackend.onrender.com/api/admin/users'
+            const url = 'https://storelistrating.onrender.com/api/admin/users'
 
             const options = {
                 method: 'GET',
@@ -122,7 +121,7 @@ const AdminPage = () => {
     const onSearchUserId = () => {
         const getUsers = async () =>{
             const jwtToken = Cookies.get('jwt_token')
-            const url = `https://storeslistbackend.onrender.com/api/admin/users/${userId}`
+            const url = `https://storelistrating.onrender.com/api/admin/users/${userId}`
 
             const options = {
                 method: 'GET',
