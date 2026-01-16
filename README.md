@@ -1,5 +1,4 @@
 ## Title
-
 Store details and Ratings Managment
 
 ## Objective
@@ -106,7 +105,7 @@ Group endpoints by role/functionality for organization.
 - **Owner Routes** (Protected; role='owner'):
     - GET `/api/owner/dashboard`: Get average rating and list of raters (users who rated their store).
 
-
+```
 Given two files `app.js` and a database file `database.db` consisting of four tables `colleges`, `users`, `favorite_colleges` and `reviews`.
 
 Write APIs to perform CRUD operations on the tables `users`, `stores`, `ratings` containing the following columns,
@@ -140,6 +139,7 @@ Write APIs to perform CRUD operations on the tables `users`, `stores`, `ratings`
 | rating        | INTEGER |
 | created_at    | TEXT    |
 
+```
 
 ### API 1
 

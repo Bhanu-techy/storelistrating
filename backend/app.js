@@ -6,7 +6,7 @@ const sqlite3 = require('sqlite3')
 const cors = require('cors')
 const app = express()
 const jwt = require('jsonwebtoken')
-//app.use(cors())
+app.use(cors())
 app.use(express.json())
 
 const bcrypt = require('bcrypt')
@@ -201,7 +201,7 @@ app.get('/api/admin/stores', async (request, response) => {
 })
 
 app.get('/api/user/stores', async (request, response) => {
-  const getQuery = `select s.id, s.name as storeName, s.email, s.address as address, r.rating as userRating, avg(r.rating) as rating
+  const getQuery = `select s.id, s.name as storeName, s.address as address, ROUND(avg(r.rating),2) as userRating, r.rating
   from stores s left join ratings r on s.id=r.store_id group by s.name order by s.id, r.store_id`
   const getResponse = await db.all(getQuery)
   response.send(getResponse)
