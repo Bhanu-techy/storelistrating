@@ -17,7 +17,7 @@ const Login = () => {
 
   const submitForm = async event => {
         event.preventDefault()
-        const url = 'https://storeslistbackend.onrender.com/api/auth/login'
+        const url = 'https://storelistrating.onrender.com/api/auth/login'
         const userDetails = {email, password}
         const options = {
         method: 'POST',
@@ -73,12 +73,11 @@ const Login = () => {
             <label htmlFor='password'>Enter Password</label>
             <input type="password" id="password" onChange={(e)=>setPassword(e.target.value)}/>
         </div>
-        {setErrMsg && <p className='err-msg'>{ErrMsg}</p>}
+        {showErr && <p className='err-msg'>{ErrMsg}</p>}
         <button type='submit' className='submit-button'>Submit</button>
     </form>
   )
 
-        
         return(
             <div className='login-container'>
             <h1 className='login-head'>Login Page</h1>

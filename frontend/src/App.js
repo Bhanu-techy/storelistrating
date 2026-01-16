@@ -11,9 +11,9 @@ function App() {
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<Login/>}/>
-      <Route exact path='/user' element={<Home/>}/>
-      <Route exact path='/admin' element={<AdminPage />}/>
-      <Route exact path="/owner" element={<OwnerPage/>}/>
+      <Route exact path='/user' element={<ProtectedRoute><Home/></ProtectedRoute>}/>
+      <Route exact path='/admin' element={<ProtectedRoute><AdminPage /></ProtectedRoute>}/>
+      <Route exact path="/owner" element={<ProtectedRoute><OwnerPage/></ProtectedRoute>}/>
     </Routes>
     </BrowserRouter>
   )

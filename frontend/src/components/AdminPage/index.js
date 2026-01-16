@@ -57,7 +57,7 @@ const AdminPage = () => {
         body: JSON.stringify(storeDetails),
         }
         const response = await fetch(url, options)
-        const result = await response.json()
+         await response.json()
     }
 
 

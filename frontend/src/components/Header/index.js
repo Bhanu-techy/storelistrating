@@ -20,9 +20,8 @@ const Header = () =>{
         Cookies.remove("id")
         navigate('/', {replace : true})
     }
+
     const email=Cookies.get("email")
-    const id=Cookies.get("id")
-    console.log(id)
     
     const onSubmitPassword = async () => {
 
@@ -38,9 +37,9 @@ const Header = () =>{
         },
         body: JSON.stringify(details),
         }
-        const response = await response(url, options)
-        const result = await response.json()
-        console.log(result)
+        const res = await fetch(url, options)
+        await res.json()
+        
     }
 
     const onChangePassword = e => {
@@ -50,8 +49,6 @@ const Header = () =>{
     const onChangeConfirmPassword = e => {
         setConfirmpassword(e.target.value)
     }
-
-
 
     return(
         <nav>
