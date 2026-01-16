@@ -193,14 +193,14 @@ app.post('/api/admin/stores', authenticateToken, async (request, response) => {
 })
 
 // GET Api of Admin to dipaly all stores and their ratings
-app.get('/api/admin/stores', async (request, response) => {
+app.get('/api/admin/stores', authenticateToken, async (request, response) => {
   const getQuery = `select stores.name as storeName, stores.email, stores.address as address, ROUND(avg(ratings.rating),2) as rating
    from stores inner join ratings on stores.id=ratings.store_id group by stores.name order by storeName`
   const getResponse = await db.all(getQuery)
   response.send(getResponse)
 })
 
-app.get('/api/user/stores', async (request, response) => {
+app.get('/api/user/stores',authenticateToken, async (request, response) => {
   const getQuery = `select s.id, s.name as storeName, s.address as address, ROUND(avg(r.rating),2) as rating
   from stores s left join ratings r on s.id=r.store_id group by s.name order by s.id, r.store_id`
   const getResponse = await db.all(getQuery)
