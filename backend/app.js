@@ -24,6 +24,10 @@ const initializeDBAndServer = async () => {
     app.listen(5000, () => {
       console.log('Server Running at http://localhost:5000/')
     })
+    await db.run('delete from users where id =6')
+    const res = await db.all('select * from users')
+    console.log(res)
+    
   } catch (e) {
     console.log(`DB Error: ${e.message}`)
     process.exit(1)
@@ -52,10 +56,13 @@ app.post('/api/auth/signup', async (request, response) => {
         )`
     const dbResponse = await db.run(createUserQuery)
     const newUserId = dbResponse.lastID
-    response.send(`Created new user with ${newUserId}`)
+    const payload = { name, email}
+    const jwtToken = jwt.sign(payload, 'MY_SECRET_TOKEN')
+    response.status(200)
+    response.send({jwt_token: jwtToken, newUserId})
   } else {
     response.status = 400
-    response.send('User already exists')
+    response.send({error_msg:'User already exists'})
   }
 })
 
@@ -79,10 +86,13 @@ app.post('/api/admin/users', async (request, response) => {
         )`
     const dbResponse = await db.run(createUserQuery)
     const newUserId = dbResponse.lastID
-    response.send(`Created new user with ${newUserId}`)
+    const payload = {id: dbUser.id, email: dbUser.email}
+    const jwtToken = jwt.sign(payload, 'MY_SECRET_TOKEN')
+    response.status(200)
+    response.send({jwt_token: jwtToken, newUserId})
   } else {
     response.status = 400
-    response.send('User already exists')
+    response.json({error_msg: 'User already exists'})
   }
 })
 
@@ -155,7 +165,6 @@ app.get('/api/admin/users', async (request, response) => {
 // GET Api to display particular user
 app.get(
   '/api/admin/users/:userId',
-  
   async (requset, response) => {
     const {userId} = requset.params
     const getUser = `select * from users where id = ${userId}`
@@ -173,7 +182,7 @@ app.get(
     const getRatings = 'select count() as count from ratings'
     const getStoresCountResponse = await db.all(getStoresCount)
     const getUsersCountResponse = await db.all(getUsersCount)
-    const getRatingCount = await db.all(getStoresCount)
+    const getRatingCount = await db.all(getRatings)
     const counts = {
       stores: getStoresCountResponse[0].count,
       users: getUsersCountResponse[0].count,

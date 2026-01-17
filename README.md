@@ -432,6 +432,4 @@ Build a single-page application (SPA) with role-based routing. Use React Router 
    password : sharath@2025
 
 3. email:bhanuprakashdevari@gmail.com
-   password : bhanu@2025#   S t o r e s - R a t i n g s - M a n a g e m e n t 
- 
- 
+   password : bhanu@2025

@@ -15,15 +15,17 @@
     height: 100px;
 }
 .login-btn-div{
-    width: 700px;
+    width: 260px;
     display: flex;
     justify-content: space-around;
+    align-items: center;
 }
 .login-btn{
     height: 40px;
     background-color: #ffffff;
     border-radius: 5px;
     font-size: 15px;
+    width: 100px;
 }
 .input-container{
     display: flex;
@@ -32,7 +34,8 @@
 }
 .form{
     width: 350px;
-    height: 300px;
+    min-height: 300px;
+    max-height: 500px;
     background-color: #ffffff;
     display: flex;
     flex-direction: column;
@@ -62,4 +65,9 @@ input{
 }
 .err-msg{
     color: red;
+}
+select{
+    width: 100px;
+    height: 30px;
+    margin: 10px;
 }
