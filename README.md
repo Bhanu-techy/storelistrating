@@ -413,12 +413,12 @@ Api(render):https://storeslistbackend.onrender.com
  
  ***Admin***
 1. email:bhanuprakashdevari@gmail.com
-   password : bhanu@2025
+   password : bhanu@1234
 
  ***owner***
 
 1. email : varaprasad@gmail.com
-   password : vara@2025
+   password : vara@1234
 
 2. email : sharathchandra@gmail.com
    password : sharath@2025

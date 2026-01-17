@@ -24,7 +24,8 @@ const initializeDBAndServer = async () => {
     app.listen(5000, () => {
       console.log('Server Running at http://localhost:5000/')
     })
-    
+    const res= await db.all('select * from users')
+    console.log(res)
   } catch (e) {
     console.log(`DB Error: ${e.message}`)
     process.exit(1)
@@ -98,7 +99,6 @@ app.post('/api/auth/login', async (request, response) => {
   const {email, password} = request.body
   const getQuery = `select * from users where email = '${email}'`
   const dbUser = await db.get(getQuery)
-
   if (!dbUser || (Array.isArray(dbUser) && dbUser.length === 0)) {
     response.status(400)
     response.send({error_msg :'Invalid User'})
@@ -109,7 +109,7 @@ app.post('/api/auth/login', async (request, response) => {
       const payload = {email, password}
       const jwtToken = jwt.sign(payload, 'MY_SECRET_TOKEN')
       response.status(200)
-      response.send({jwt_token: jwtToken})
+      response.send({jwt_token: jwtToken, id : dbUser.id})
     } else {
       response.status(400)
       response.send({error_msg: 'Invalid Password'})
