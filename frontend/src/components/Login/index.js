@@ -16,10 +16,9 @@ const Login = () => {
 
     const navigate = useNavigate()
 
-
   const submitForm = async event => {
         event.preventDefault()
-        const url = 'https://storelistrating.onrender.com/api/auth/login'
+        const url = 'http://localhost:5000/api/auth/login'
         const userDetails = {email, password}
         const options = {
         method: 'POST',
@@ -31,7 +30,7 @@ const Login = () => {
         const response = await fetch(url, options)
         const data = await response.json()
         Cookies.set("email", email)
-        console.log(role)
+        
         if(response.ok){
             Cookies.set('jwt_token', data.jwt_token, {expires: 30})
             Cookies.set("id", data.id, {expires : 30})

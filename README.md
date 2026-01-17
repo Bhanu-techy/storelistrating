@@ -1,5 +1,5 @@
 ## Title
-Store details and Ratings Managment
+**Store details and Ratings Managment**
 
 ## Objective
 
@@ -157,12 +157,18 @@ Signup Api for Normal Users
 [
   {
     "name" : "Bhanu Prakash",
-    "password" : "bhanu@2025",
+    "password" : "bhanu@1234",
     "address" : "1-22/A-6, Kukatpally, Hyderabad",
     "email" : "bhanuprakashdevari@gmail.com",
     "role" : "admin"
 }
 ]
+```
+### Response
+
+```
+{jwt_token, id}
+
 ```
 
 ### API 2
@@ -211,7 +217,7 @@ Login api for authencate users
 #### Response 
 
 ```
-jwt_token
+{jwt_token, id}
 
 ```
 
@@ -363,13 +369,10 @@ Build a single-page application (SPA) with role-based routing. Use React Router 
 - **Owner Dashboard**: Rating summary, Rater list.
 
 #### Must Have
-
     
-    -**Backend**: Node.js with Express.js for API development. Use it to handle routes, middleware for authentication, and database interactions.
-    
-    - **Database**: SQLite for lightweight, file-based storage. Ideal for this project as it requires no server setup. Use an ORM like Sequelize or raw SQL queries via `sqlite3` package.
-
-    - **Frontend**: React.js for building dynamic UIs. Use hooks for state management, React Router for navigation,
+-**Backend**: Node.js with Express.js for API development. Use it to handle routes, middleware for authentication, and database interactions.
+- **Database**: SQLite for lightweight, file-based storage. Ideal for this project as it requires no server setup. Use an ORM like Sequelize or raw SQL queries via `sqlite3` package.
+- **Frontend**: React.js for building dynamic UIs. Use hooks for state management, React Router for navigation,
 
 
 #### Nice to Have
@@ -403,8 +406,8 @@ Build a single-page application (SPA) with role-based routing. Use React Router 
 
 ### BackEnd Links
 
-    Github     :https://github.com/Bhanu-techy/storesListBackend.git
-    Api(render):https://storeslistbackend.onrender.com
+Github     :https://github.com/Bhanu-techy/storesListBackend.git
+Api(render):https://storeslistbackend.onrender.com
 
 ### Sample Login details for testing
  
@@ -420,16 +423,10 @@ Build a single-page application (SPA) with role-based routing. Use React Router 
 2. email : sharathchandra@gmail.com
    password : sharath@2025
 
-3. email:bhanuprakashdevari@gmail.com
-   password : bhanu@2025
-
 ***user***
 
-1. email : varaprasad@gmail.com
-   password : vara@2025
+1. email : saikumar@gmail.com
+   password : sai@1234
 
-2. email : sharathchandra@gmail.com
-   password : sharath@2025
-
-3. email:bhanuprakashdevari@gmail.com
-   password : bhanu@2025
+2. email:bhanu@gmail.com
+   password : bhanu@1234

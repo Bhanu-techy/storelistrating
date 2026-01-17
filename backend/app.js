@@ -24,9 +24,6 @@ const initializeDBAndServer = async () => {
     app.listen(5000, () => {
       console.log('Server Running at http://localhost:5000/')
     })
-    await db.run('delete from users where id =6')
-    const res = await db.all('select * from users')
-    console.log(res)
     
   } catch (e) {
     console.log(`DB Error: ${e.message}`)
@@ -101,19 +98,18 @@ app.post('/api/auth/login', async (request, response) => {
   const {email, password} = request.body
   const getQuery = `select * from users where email = '${email}'`
   const dbUser = await db.get(getQuery)
-  const {id} = dbUser
 
   if (!dbUser || (Array.isArray(dbUser) && dbUser.length === 0)) {
     response.status(400)
-    response.send('Invalid User')
+    response.send({error_msg :'Invalid User'})
   } else {
     const isPasswordMatched = await bcrypt.compare(password, dbUser.password)
 
     if (isPasswordMatched === true) {
-      const payload = {id: dbUser.id, email: dbUser.email}
+      const payload = {email, password}
       const jwtToken = jwt.sign(payload, 'MY_SECRET_TOKEN')
       response.status(200)
-      response.send({jwt_token: jwtToken, id})
+      response.send({jwt_token: jwtToken})
     } else {
       response.status(400)
       response.send({error_msg: 'Invalid Password'})
