@@ -18,7 +18,7 @@ const Login = () => {
 
   const submitForm = async event => {
         event.preventDefault()
-        const url = 'http://localhost:5000/api/auth/login'
+        const url = 'https://storelistrating.onrender.com/api/auth/login'
         const userDetails = {email, password}
         const options = {
         method: 'POST',
