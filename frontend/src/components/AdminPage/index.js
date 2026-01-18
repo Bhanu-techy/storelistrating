@@ -41,8 +41,10 @@ const AdminPage = () => {
         body: JSON.stringify(userDetails),
         }
         const response = await fetch(url, options)
-        const result = await response.json()
-        console.log(result)
+        if(response.ok){
+            alert("User added successfully")
+        }
+        
     }
 
     const onAddStoreDetails = async() => {
@@ -57,7 +59,9 @@ const AdminPage = () => {
         body: JSON.stringify(storeDetails),
         }
         const response = await fetch(url, options)
-         await response.json()
+        if(response.ok){
+            alert("store added successfully")
+        }
     }
 
 
@@ -93,7 +97,6 @@ const AdminPage = () => {
             const response = await fetch(url, options)
             const data = await response.json()
             setStores(data)
-           console.log(data)
         }
         getStores()
     },[])

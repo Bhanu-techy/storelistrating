@@ -404,11 +404,6 @@ Build a single-page application (SPA) with role-based routing. Use React Router 
 - Ensure the application is fully functional and meets all requirements.
 - Test thoroughly for edge cases and validations.
 
-### BackEnd Links
-
-Github     :https://github.com/Bhanu-techy/storesListBackend.git
-Api(render):https://storeslistbackend.onrender.com
-
 ### Sample Login details for testing
  
  ***Admin***
@@ -421,7 +416,7 @@ Api(render):https://storeslistbackend.onrender.com
    password : vara@1234
 
 2. email : sharathchandra@gmail.com
-   password : sharath@2025
+   password : sharath@1234
 
 ***user***
 

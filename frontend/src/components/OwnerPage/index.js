@@ -22,11 +22,9 @@ const OwnerPage = () => {
                 },
                 body: JSON.stringify(Id)
             }
-    
                 const response = await fetch(url, options)
                 const data = await response.json()
                 setStores(data)
-               
             }
             getStores()
         },[id])
@@ -35,7 +33,7 @@ const OwnerPage = () => {
         <>
         <Header />
         <ol className="stores-list-own">
-            <h1>Stores</h1>
+        <h1>Stores</h1>
         {stores.map(each => (
         <li key={each.id} className="list owner-stores">
             <p className="title">Store Name : <span>{each.name}</span></p>

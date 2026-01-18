@@ -24,8 +24,6 @@ const initializeDBAndServer = async () => {
     app.listen(5000, () => {
       console.log('Server Running at http://localhost:5000/')
     })
-    const res= await db.all('select * from users')
-    console.log(res)
   } catch (e) {
     console.log(`DB Error: ${e.message}`)
     process.exit(1)
@@ -223,7 +221,7 @@ app.post('/api/user/ratings', authenticateToken, async (request, response) => {
 app.post('/api/owner/dashboard',authenticateToken, async (request, response) => {
   const {id} = request.body
   const getStores = `select s.name, s.id,
-  avg(r.rating) as avgRating from stores s inner join ratings r
+  Round(avg(r.rating),2) as avgRating from stores s inner join ratings r
   on s.id=r.store_id 
   where owner_id = ${id} group by s.name`
   const getResponse = await db.all(getStores)

@@ -4,8 +4,6 @@ import Header from '../Header'
 
 import './index.css'
 
-
-
 const Home = () =>{
 
   const [stores, setStores] = useState([])
@@ -29,15 +27,9 @@ const Home = () =>{
     const response = await fetch(url, options)
     const data = await response.json()
     setStores(data)
-        
-    }
-    if  (id!==undefined){
-      alert("Rating added")
     }
     getStores()
     },[id])
-
-    console.log(id)
 
     const onChangeRating = event =>{
       setRating(event.target.value)
@@ -47,7 +39,6 @@ const Home = () =>{
       const url = 'https://storelistrating.onrender.com/api/user/ratings'
       const details ={store_id :id, rating}
       setId(id)
-      console.log(details)
       const options = {
         method: 'POST',
         headers : {
@@ -58,8 +49,12 @@ const Home = () =>{
       }
 
       const response = await fetch(url, options)
-      const data = await response.json()
-      console.log(data)
+      if (response.ok){
+        setRating("")
+        setId(undefined)
+        alert("Rating added")
+      }
+      
     }
     
     return(

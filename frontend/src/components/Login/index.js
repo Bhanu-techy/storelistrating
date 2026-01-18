@@ -34,7 +34,7 @@ const Login = () => {
         if(response.ok){
             Cookies.set('jwt_token', data.jwt_token, {expires: 30})
             Cookies.set("id", data.id, {expires : 30})
-            console.log(data)
+            
             switch(role){
                 case "user":
                     navigate('/user', {replace:  true})
